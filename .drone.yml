@@ -1,20 +1,17 @@
+---
 kind: pipeline
 name: default
 
 steps:
-- name: build
-  image: perl:5.28.1-slim-threaded
-  commands:
-  - cpanm Carton
-  - carton install
+  - name: test
+    image: perl:5.28.1-slim-threaded
+    commands:
+      - cpanm Carton
+      - carton install
+      - carton exec -- prove -lv
 
-- name: test_dummy
-  image: perl:5.28.1-slim-threaded
-  commands:
-  - carton exec morbo ./script/mojo_example
-
-- name: notify-slack
-  image: plugins/slack
-  settings:
-    webhook:
-      from_secret: webhook_url
+  - name: notify-slack
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: webhook_url
