@@ -7,6 +7,5 @@ services:
       - ".:/app"
     ports:
       - "3000:3000"
-    command: carton exec -- ./script/mojo_example daemon
     stdin_open: true
     tty: true
