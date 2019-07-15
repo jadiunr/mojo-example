@@ -1,4 +1,4 @@
-package MojoExample;
+package MojoExample::Web;
 use Mojo::Base 'Mojolicious';
 
 # This method will run once at server start
@@ -6,7 +6,7 @@ sub startup {
   my $self = shift;
 
   # Load configuration from hash returned by config file
-  my $config = $self->plugin('Config');
+  my $config = $self->plugin(Config => {file => 'mojo_example.conf'});
 
   # Configure the application
   $self->secrets($config->{secrets});
