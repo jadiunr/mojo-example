@@ -1,6 +1,5 @@
-die "MOJO_MODE SET SHIRO BOKE" unless $ENV{MOJO_MODE};
-my $env = $ENV{MOJO_MODE};
-my $config = do "./config/${env}.conf";
+die 'MOJO_MODE env is undefined.' unless $ENV{MOJO_MODE};
+my $config = do "./config/$ENV{MOJO_MODE}.pl";
 
 +{
     connect_info => [@{$config->{DBI}}],

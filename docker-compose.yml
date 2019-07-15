@@ -7,8 +7,7 @@ services:
     - ".:/app"
     ports:
     - "3000:3000"
-    environment:
-      MOJO_MODE: development
+    env_file: .env.dev
     stdin_open: true
     tty: true
   db:
