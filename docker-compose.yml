@@ -12,14 +12,14 @@ services:
     stdin_open: true
     tty: true
   db:
-    image: mysql:5.7
+    image: postgres:11.4-alpine
     volumes:
-    - db_data:/var/lib/mysql
+    - db_data:/var/lib/postgresql/data
     ports:
-    - 3306:3306
+    - 5432:5432
     environment:
-      MYSQL_DATABASE: app_development
-      MYSQL_ROOT_PASSWORD: secret
+      POSTGRES_DB: app_development
+      POSTGRES_PASSWORD: postgres
 
 volumes:
   db_data:

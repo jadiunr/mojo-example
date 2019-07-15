@@ -1,6 +1,6 @@
 requires 'Anego', '0.02';
 requires 'Aniki', '1.06';
-requires 'DBD::mysql';
+requires 'DBD::Pg';
 requires 'Mojolicious', '8.15';
 
 on develop => sub {
