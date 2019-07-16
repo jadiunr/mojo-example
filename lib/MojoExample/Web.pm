@@ -15,13 +15,18 @@ sub startup {
   # Load Helper Plugin
   $self->plugin('MojoExample::Plugin::Helpers');
 
+
+
   # Router
   my $r = $self->routes;
 
-  # Normal route to controller
+  # Root
   $r->get('/')->to('Example#welcome');
-  $r->get('/tasks')->to('Tasks#index');
-  $r->post('/tasks')->to('Tasks#create');
+
+  # Task resource
+  my $tasks = $r->under('/tasks');
+  $tasks->get->to('Tasks#index');
+  $tasks->post->to('Tasks#create');
 }
 
 1;
