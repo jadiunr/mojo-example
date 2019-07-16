@@ -1,6 +1,5 @@
 package MojoExample::DB::Schema;
-use strict;
-use warnings;
+use Mojo::Base -strict;
 use DBIx::Schema::DSL;
 
 database 'PostgreSQL';

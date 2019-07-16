@@ -6,7 +6,7 @@ sub welcome {
   my $self = shift;
 
   # Render template "example/welcome.html.ep" with message
-  $self->render(json => {status => 'ok'});
+  $self->render(json => {status => 'ok(まことに〜？？？)'});
 }
 
 1;
