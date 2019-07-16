@@ -2,9 +2,18 @@
 kind: pipeline
 name: default
 
+env: &env
+  MOJO_MODE: development
+  DATABASE_HOST: db
+  DATABASE_PORT: 5432
+  DATABASE_USER: postgres
+  DATABASE_PASSWORD: postgres
+
 steps:
   - name: test
-    image: perl:5.28.1-slim-threaded
+    image: perl:5.28.1-threaded
+    environment:
+      <<: *env
     commands:
       - cpanm Carton
       - carton install
