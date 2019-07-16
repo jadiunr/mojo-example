@@ -12,11 +12,16 @@ sub startup {
   # Configure the application
   $self->secrets($config->{secrets});
 
+  # Load Helper Plugin
+  $self->plugin('MojoExample::Plugin::Helpers');
+
   # Router
   my $r = $self->routes;
 
   # Normal route to controller
   $r->get('/')->to('Example#welcome');
+  $r->get('/tasks')->to('Tasks#index');
+  $r->post('/tasks')->to('Tasks#create');
 }
 
 1;
