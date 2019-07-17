@@ -10,17 +10,29 @@ sub register {
 sub _auth {
     my $c = shift;
 
-    state $auth = MojoExample::Plugin::Auth::Token->new;
+    state $auth = MojoExample::Plugin::Auth::Token->new(secret => $c->config->{secrets}[0]);
 }
 
 package MojoExample::Plugin::Auth::Token;
-use Mojo::Base 'Mojolicious';
+use Mojo::Base -base;
 use Mojo::JWT;
+
+has 'secret';
 
 sub verify_token {
     my ($self, $token) = @_;
 
-    return $self;
+    return Mojo::JWT->new(secret => $self->secret)->decode($token);
+}
+
+sub generate_token {
+    my ($self, $user_id) = @_;
+
+    return Mojo::JWT->new(
+        secret => $self->secret,
+        claims => {user_id => $user_id},
+        expires => time + 86400
+    )->encode;
 }
 
 1;

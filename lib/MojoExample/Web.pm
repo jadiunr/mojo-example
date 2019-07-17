@@ -1,6 +1,5 @@
 package MojoExample::Web;
 use Mojo::Base 'Mojolicious';
-use Pry;
 
 # This method will run once at server start
 sub startup {
@@ -17,8 +16,6 @@ sub startup {
     $self->plugin('MojoExample::Plugin::DB');
     $self->plugin('MojoExample::Plugin::Auth');
 
-    pry;
-
     # Router
     my $r = $self->routes;
 
@@ -28,8 +25,9 @@ sub startup {
     # Task resource
     my $tasks = $r->under('/tasks' => sub {
         my $c = shift;
+        my $token = $c->param('Authentication') =~ s/Bearer //r;
 
-        return 1 if $c->auth->verify_token($c->param('Authentication'));
+        eval { return 1 if $c->auth->verify_token($token) };
 
         $c->render(json => {error => 'Unauthenticated'}, status => 401);
         return undef;
