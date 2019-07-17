@@ -1,4 +1,4 @@
-package MojoExample::Plugin::Helpers;
+package MojoExample::Plugin::DB;
 use Mojo::Base 'Mojolicious::Plugin';
 use MojoExample::DB;
 
