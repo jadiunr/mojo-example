@@ -238,17 +238,21 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       strict 0
       vars 0
-  DBD-Pg-3.8.1
-    pathname: T/TU/TURNSTEP/DBD-Pg-3.8.1.tar.gz
+  DBD-mysql-4.050
+    pathname: D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz
     provides:
-      Bundle::DBD::Pg v3.8.1
-      DBD::Pg v3.8.1
+      Bundle::DBD::mysql 4.050
+      DBD::mysql 4.050
+      DBD::mysql::GetInfo undef
+      DBD::mysql::db 4.050
+      DBD::mysql::dr 4.050
+      DBD::mysql::st 4.050
     requirements:
-      DBI 1.614
-      ExtUtils::MakeMaker 6.11
-      Test::More 0.88
-      Time::HiRes 0
-      version 0
+      DBI 1.609
+      Data::Dumper 0
+      Devel::CheckLib 1.09
+      ExtUtils::MakeMaker 0
+      perl 5.008001
   DBI-1.642
     pathname: T/TI/TIMB/DBI-1.642.tar.gz
     provides:
@@ -470,6 +474,60 @@ DISTRIBUTIONS
       strict 0
       warnings 0
       warnings::register 0
+  DateTime-Format-Builder-0.82
+    pathname: D/DR/DROLSKY/DateTime-Format-Builder-0.82.tar.gz
+    provides:
+      DateTime::Format::Builder 0.82
+      DateTime::Format::Builder::Parser 0.82
+      DateTime::Format::Builder::Parser::Dispatch 0.82
+      DateTime::Format::Builder::Parser::Quick 0.82
+      DateTime::Format::Builder::Parser::Regex 0.82
+      DateTime::Format::Builder::Parser::Strptime 0.82
+      DateTime::Format::Builder::Parser::generic 0.82
+    requirements:
+      Carp 0
+      DateTime 1.00
+      DateTime::Format::Strptime 1.04
+      ExtUtils::MakeMaker 0
+      Params::Validate 0.72
+      Scalar::Util 0
+      parent 0
+      strict 0
+      vars 0
+      warnings 0
+  DateTime-Format-MySQL-0.06
+    pathname: X/XM/XMIKEW/DateTime-Format-MySQL-0.06.tar.gz
+    provides:
+      DateTime::Format::MySQL 0.06
+    requirements:
+      DateTime 0
+      DateTime::Format::Builder 0.6
+      Module::Build 0
+  DateTime-Format-Strptime-1.76
+    pathname: D/DR/DROLSKY/DateTime-Format-Strptime-1.76.tar.gz
+    provides:
+      DateTime::Format::Strptime 1.76
+      DateTime::Format::Strptime::Types 1.76
+    requirements:
+      Carp 0
+      DateTime 1.00
+      DateTime::Locale 1.23
+      DateTime::Locale::Base 0
+      DateTime::Locale::FromData 0
+      DateTime::TimeZone 2.09
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Params::ValidationCompiler 0
+      Specio 0.33
+      Specio::Declare 0
+      Specio::Exporter 0
+      Specio::Library::Builtins 0
+      Specio::Library::String 0
+      Try::Tiny 0
+      constant 0
+      parent 0
+      strict 0
+      warnings 0
   DateTime-Locale-1.24
     pathname: D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
     provides:
@@ -911,6 +969,16 @@ DISTRIBUTIONS
       Test::More 0.98
       parent 0
       perl 5.008001
+  Devel-CheckLib-1.13
+    pathname: M/MA/MATTN/Devel-CheckLib-1.13.tar.gz
+    provides:
+      Devel::CheckLib 1.13
+    requirements:
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Temp 0.16
+      perl 5.00405
   Devel-GlobalDestruction-0.14
     pathname: H/HA/HAARG/Devel-GlobalDestruction-0.14.tar.gz
     provides:
@@ -1591,6 +1659,25 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
+  Params-Validate-1.29
+    pathname: D/DR/DROLSKY/Params-Validate-1.29.tar.gz
+    provides:
+      Params::Validate 1.29
+      Params::Validate::Constants 1.29
+      Params::Validate::PP 1.29
+      Params::Validate::XS 1.29
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.28
+      Module::Implementation 0
+      Scalar::Util 1.10
+      XSLoader 0
+      perl 5.008001
+      strict 0
+      vars 0
+      warnings 0
   Params-ValidationCompiler-0.30
     pathname: D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
     provides:

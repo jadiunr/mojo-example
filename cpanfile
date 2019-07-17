@@ -1,6 +1,7 @@
 requires 'Anego', '0.02';
 requires 'Aniki', '1.06';
-requires 'DBD::Pg';
+requires 'DateTime::Format::MySQL';
+requires 'DBD::mysql';
 requires 'Mojolicious', '8.15';
 requires 'Mojo::JWT';
 
